@@ -32,6 +32,27 @@ const getProducts = async () => {
         (repeatProduct) => repeatProduct.id === product.id
       );
 
+      Toastify({
+        text: "Agregaste un producto",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #e2a5d2d6, #e2a5d2d6)",
+          borderRadius: "2rem",
+          fontSize: "1rem",
+        },
+        offset: {
+          x: "2.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+          y: "2.5rem", // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
+
       if (repeat) {
         carrito.map((prod) => {
           if (prod.id === product.id) {
